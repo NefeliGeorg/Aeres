@@ -37,24 +37,22 @@ import {
   DataSourceToolbarModule,
   DataTableModule,
   DataViewModule,
-  HELP_CONTEXTUAL,
   HelpContextualModule,
   MenuItem,
-  MenuService,
+  MenuService
 } from 'qbm';
 import { isRuleAdmin } from '../admin/qer-permissions-helper';
-import { RuleAdminGuardService } from '../guards/rule-admin-guard.service';
 import { RiskConfigSidesheetComponent } from './risk-config-sidesheet/risk-config-sidesheet.component';
 import { RiskConfigComponent } from './risk-config.component';
 const routes: Routes = [
-  {
-    path: 'configuration/risk',
-    component: RiskConfigComponent,
-    canActivate: [RuleAdminGuardService],
-    data: {
-      contextId: HELP_CONTEXTUAL.ConfigurationRisk,
-    },
-  },
+  // {
+  //   path: 'configuration/risk',
+  //   component: RiskConfigComponent,
+  //   canActivate: [RuleAdminGuardService],
+  //   data: {
+  //     contextId: HELP_CONTEXTUAL.ConfigurationRisk,
+  //   },
+  // },
 ];
 
 @NgModule({
@@ -81,7 +79,7 @@ export class RiskConfigModule {
     logger: ClassloggerService,
   ) {
     logger.info(this, '▶️ RiskConfigModule loaded');
-    this.setupMenu();
+    // this.setupMenu();
   }
 
   private setupMenu(): void {

@@ -230,6 +230,9 @@ export class GroupSidesheetComponent implements OnInit {
       );
 
       this.cdrList = cols.map((column) => new BaseCdr(column));
+      this.cdrList.forEach(cdr => {
+        cdr.isReadOnly = () => true;
+      });
     } finally {
       this.busyService.hide();
     }

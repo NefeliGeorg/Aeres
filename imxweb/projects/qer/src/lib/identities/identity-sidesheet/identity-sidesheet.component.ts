@@ -333,15 +333,15 @@ export class IdentitySidesheetComponent implements OnInit, OnDestroy {
     // Handle the IsInActive column outside the context of a CDR editor so the UI can invert the meaning to make more sense to the user
     // This should be inversed on the api data response at some point, but until then we handle it in the UI
     this.isActiveFormControl.setValue(!this.data.selectedIdentity.IsInActive.value);
-    if (!this.data.canEdit || !this.data.selectedIdentity.IsInActive.GetMetadata().CanEdit()) {
+    //if (!this.data.canEdit || !this.data.selectedIdentity.IsInActive.GetMetadata().CanEdit()) {
       this.isActiveFormControl.disable();
-    }
+    //}
     this.detailsFormGroup.addControl(this.data.selectedIdentity.IsInActive.Column.ColumnName, this.isActiveFormControl);
 
     this.isSecurityIncidentFormControl.setValue(this.data.selectedIdentity.IsSecurityIncident.value);
-    if (!this.data.canEdit || !this.data.selectedIdentity.IsSecurityIncident.GetMetadata().CanEdit()) {
+    //if (!this.data.canEdit || !this.data.selectedIdentity.IsSecurityIncident.GetMetadata().CanEdit()) {
       this.isSecurityIncidentFormControl.disable();
-    }
+    //}
     this.detailsFormGroup.addControl(this.data.selectedIdentity.IsSecurityIncident.Column.ColumnName, this.isSecurityIncidentFormControl);
     this.detailsFormGroup.markAsPristine();
 
@@ -349,21 +349,21 @@ export class IdentitySidesheetComponent implements OnInit, OnDestroy {
     this.cdrListPersonal = this.cdrFactoryService.buildCdrFromColumnList(
       this.data.selectedIdentity.GetEntity(),
       personalColumns,
-      !this.data.canEdit,
+      true,
     );
 
     const organizationalColumns = this.data.projectConfig.PersonConfig?.VI_Employee_MasterData_OrganizationalAttributes || [];
     this.cdrListOrganizational = this.cdrFactoryService.buildCdrFromColumnList(
       this.data.selectedIdentity.GetEntity(),
       organizationalColumns.filter((column) => column !== 'IsInActive'),
-      !this.data.canEdit,
+      true,
     );
 
     const localityColumns = this.data.projectConfig.PersonConfig?.VI_Employee_MasterData_LocalityAttributes || [];
     this.cdrListLocality = this.cdrFactoryService.buildCdrFromColumnList(
       this.data.selectedIdentity.GetEntity(),
       localityColumns,
-      !this.data.canEdit,
+      true,
     );
 
     this.busyService.show();

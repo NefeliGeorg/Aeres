@@ -3,7 +3,7 @@
     <div class="imx-card-data-explorer-header-bg">
       <h3>{{ ownershipInfo?.TableNameDisplay }}</h3>
       <ng-container *ngIf="contextId">
-        <imx-help-contextual [contextId]="contextId"></imx-help-contextual>
+        <!-- <imx-help-contextual [contextId]="contextId"></imx-help-contextual> -->
       </ng-container>
     </div>
   </div>
@@ -23,7 +23,7 @@
 </mat-card>
 
 <div class="imx-button-bar-transparent">
-  <button
+  <!-- <button
     mat-stroked-button
     data-imx-identifier="roles-overview-button-restore"
     (click)="restoreDeletedRole()"
@@ -41,7 +41,7 @@
   >
     <eui-icon icon="add"></eui-icon>
     <span translate>{{ getCreationText() }}</span>
-  </button>
+  </button> -->
 </div>
 
 <ng-template #pageView>

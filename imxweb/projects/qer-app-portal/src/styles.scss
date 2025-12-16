@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
 @import '@elemental-ui/core/src/styles/core.scss';
+@import 'base/variables';
 
 .imx-dialog-panel-class > .mat-mdc-dialog-container {
   background-color: mat.m2-get-color-from-palette($asher-gray-palette, 200);
@@ -92,4 +93,348 @@ imx-data-explorer-accounts {
   .eui-sidesheet-actions.mat-mdc-card.eui-sidesheet-actions--white {
     background-color: $color-gray-90;
   }
+}
+
+//Custom Colors
+
+//Login Page, Loading Screen
+div.imx-loginPage,
+.splash-screen-container {
+  background-color: $CCC_Color_Main !important;
+}
+
+//Loading Spinner
+body .mat-mdc-progress-spinner circle,
+body .mat-mdc-spinner circle {
+  stroke: $CCC_Color_Main;
+}
+
+//Header
+header.eui-masthead div.eui-masthead-inner {
+  background-color: $CCC_Color_Main;
+}
+.eui-masthead mat-toolbar mat-toolbar-row {
+  background-color: $CCC_Color_Main;
+}
+
+//selected menu item underlining
+.eui-top-navigation-desktop .eui-top-navigation .mat-mdc-button.eui-top-navigation-item-active {
+  border-bottom: 2px solid $CCC_Color_Main !important;
+}
+
+.eui-contrast-theme .eui-top-navigation-desktop .eui-top-navigation .mat-mdc-button.eui-top-navigation-item-active,
+.eui-dark-theme .eui-top-navigation-desktop .eui-top-navigation .mat-mdc-button.eui-top-navigation-item-active {
+  color: $CCC_Color_Light !important;
+}
+
+//buttons, info buttons, header arrows and selected menu item, data source toolbar search icon, loginpage select arrow, new request page stuff
+.eui-top-navigation .eui-top-navigation-menu-icon,
+.imx-icon-info, //question mark icon on shops
+.imx-btn-color-default,
+.imx-card.mat-mdc-tooltip-trigger .imx-content span, //new request recipients text
+.eui-alert.eui-alert-type--info .eui-alert-icon,
+.mat-mdc-form-field.mat-focused:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mdc-floating-label,
+.mat-expansion-panel-header .mat-expansion-panel-header-title,
+.mat-mdc-form-field.mat-focused.mat-primary .mat-mdc-select-arrow,
+.imx-data-source-toolbar .eui-search-icon,
+.imx-loginPage .mat-mdc-select-arrow,
+.imx-product-bundle-list-header .imx-product-bundle-list-header-text,
+.mat-expansion-indicator:after,
+.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text, //dropdown selection text
+.mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-checked::after,
+.mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-indeterminate::after {
+  color: $CCC_Color_Main !important;
+}
+
+.mat-mdc-button.mat-primary,
+.eui-top-navigation .mat-mdc-button.eui-top-navigation-item-active,
+.mat-mdc-outlined-button.mat-primary,
+.mat-mdc-icon-button.mat-primary {
+  color: $CCC_Color_Buttons !important;
+}
+
+
+.mat-expansion-panel-header {
+  border-bottom: 2px solid $CCC_Color_Main !important;
+}
+
+//header selected menu item and underline for items without dropdown
+.eui-top-navigation .mat-mdc-button.eui-top-navigation-item-active-link {
+  color: $CCC_Color_Main !important;
+  border-bottom: 2px solid $CCC_Color_Main !important;
+}
+
+.list-header {
+  color: $CCC_Color_Main !important;
+  border-bottom: 2px solid $CCC_Color_Main !important;
+}
+
+//sidesheet, buttons etc
+.eui-sidesheet .mat-toolbar,
+.mat-mdc-chip.mat-mdc-chip-option.mat-mdc-chip-selected {
+  background-color: $CCC_Color_Main !important;
+}
+
+//buttons
+.mat-mdc-unelevated-button.mat-primary:not(.mat-mdc-button-disabled) {
+  background-color: $CCC_Color_Buttons !important;
+}
+
+//custom filters
+.expression-container-header {
+  color: $CCC_Color_Main !important;
+}
+
+.expression-container:hover .expression-container-header {
+  color: #fff !important;
+  background-color: $CCC_Color_Main !important;
+}
+
+.expression-container:hover {
+  border-color: $CCC_Color_Main !important;
+}
+
+.selected-logical-op {
+  color: $CCC_Color_Main !important;
+}
+
+//selected menu item on new request
+.mat-mdc-tab-link .mdc-tab-indicator__content--underline {
+  border-color: $CCC_Color_Main !important;
+}
+
+.mat-mdc-tab-link.mdc-tab--active .mdc-tab__text-label {
+  color: $CCC_Color_Main !important;
+}
+
+//selected item on shops
+.mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+  color: $CCC_Color_Main !important;
+}
+
+.mat-mdc-tab .mdc-tab-indicator__content--underline {
+  border-color: $CCC_Color_Main !important;
+}
+
+//icons (eg in delegations) , calendar, application roles  etc
+.mat-step-header .mat-step-icon-state-edit,
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-calendar-body-selected {
+  color: white !important;
+  background-color: $CCC_Color_Main !important;
+}
+
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
+  > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+  background-color: $CCC_Color_Light !important;
+}
+
+.imx-timeline-content .imx-timeline-events-group .imx-timeline-events .imx-timeline-event .imx-timeline-icon-edit {
+  color: $CCC_Color_Main !important;
+}
+
+//color of circle in history->timeline of identies in responsibilities
+.eui-dark-theme .imx-timeline-content .imx-timeline-events-group .imx-timeline-separator-marker,
+.eui-contrast-theme .imx-timeline-content .imx-timeline-events-group .imx-timeline-separator-marker {
+  border: 2px solid $CCC_Color_Main !important;
+}
+
+//side navigation
+.imx-snavigation .mat-sidenav-container .mat-sidenav .imx-snavigation-side .imx-snavigation-side-content .imx-snavigation-item {
+  &.imx-snavigation-item--selected {
+    background-color: $CCC_Color_Main !important;
+  }
+  &:hover:not(.imx-snavigation-item--selected) {
+    background-color: $CCC_Color_Light !important;
+  }
+}
+
+//row hover
+.eui-contrast-theme tr .mat-mdc-row:hover,
+.eui-contrast-theme tr .imx-data-table-highlightedActive .mat-mdc-row:hover {
+  background-color: $CCC_Color_Buttons !important;
+}
+
+table.mat-mdc-table.mdc-data-table__table.cdk-table.ng-star-inserted > tbody > tr.mat-mdc-row.mdc-data-table__row.cdk-row.expanded-detail-row.ng-star-inserted > td {
+    background-color: white !important;
+}
+
+.eui-contrast-theme table.mat-mdc-table.mdc-data-table__table.cdk-table.ng-star-inserted > tbody > tr.mat-mdc-row.mdc-data-table__row.cdk-row.expanded-detail-row.ng-star-inserted > td {
+    background-color: #18191a !important;
+}
+
+.eui-dark-theme table.mat-mdc-table.mdc-data-table__table.cdk-table.ng-star-inserted > tbody > tr.mat-mdc-row.mdc-data-table__row.cdk-row.expanded-detail-row.ng-star-inserted > td {
+    background-color: $color-gray-70 !important;
+}
+
+.eui-contrast-theme .mat-mdc-row:hover td.mat-mdc-cell {
+  color: white !important;
+}
+.eui-contrast-theme tr.mat-mdc-row.expanded-group-row:hover td.mat-mdc-cell {
+  color: black !important;
+}
+.eui-contrast-theme .imx-data-table-highlightedActive .mat-mdc-row:hover td.mat-mdc-cell {
+  color: black !important;
+}
+
+.mat-mdc-row:hover {
+  background-color: $CCC_Color_Light !important;
+}
+
+.eui-dark-theme tr .mat-mdc-row:hover {
+  background-color: $CCC_Color_Buttons !important;
+}
+
+//data explorer header
+.imx-card-data-explorer-header-bg {
+  background-color: $CCC_Color_Light !important;
+}
+
+.eui-contrast-theme .imx-card-data-explorer-header-bg,
+.eui-dark-theme .imx-card-data-explorer-header-bg {
+  background-color: $CCC_Color_Main !important;
+}
+
+.imx-card-data-explorer-header {
+  border: 1px solid $CCC_Color_Main !important;
+}
+
+//tiles
+mat-card.mat-mdc-card.mdc-card .imx-generic-tile-content div {
+  background-color: $CCC_Color_Light !important;
+  color: $CCC_Color_Buttons !important;
+}
+
+// alert box background
+.eui-alert.eui-alert-type--info.eui-alert-colored {
+  background-color: $CCC_Color_Light !important;
+}
+
+//workflow text
+.imx-info {
+  color: $CCC_Color_Main !important;
+}
+//workflow icon
+li.imx-event.imx-info::before {
+  color: $CCC_Color_Main !important;
+}
+li.imx-event.imx-info {
+  background: linear-gradient($CCC_Color_Main, $CCC_Color_Main) no-repeat scroll 9px 0 transparent !important;
+  background-size: 2px 1000px !important;
+}
+
+//side navigation box background
+.imx-snavigation-tree.mat-mdc-card .imx-snavigation-side-content {
+  // background: $CCC_Color_Light !important;
+  border: 1px solid $CCC_Color_Main !important;
+}
+
+.mat-tree-node--selected {
+  border: 1px solid $CCC_Color_Main !important;
+}
+
+//image icons
+imx-new-request img,
+.details-container .details-image img {
+  filter: brightness(0) saturate(100%) invert(53%) sepia(95%) saturate(5090%) hue-rotate(170deg) brightness(88%) contrast(101%);
+}
+
+//form field color when focused
+.mat-mdc-form-field.mat-focused:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mdc-notched-outline__leading,
+.mat-mdc-form-field.mat-focused:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mdc-notched-outline__notch,
+.mat-mdc-form-field.mat-focused:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mdc-notched-outline__trailing {
+  border-color: $CCC_Color_Main !important;
+}
+
+//data explorer application roles
+.imx-timeline-content {
+  border: $CCC_Color_Main !important;
+  background-color: $CCC_Color_Light !important;
+}
+.imx-timeline-content .imx-timeline-events-group .imx-timeline-separator-connector {
+  background-color: $CCC_Color_Main !important;
+}
+
+//completed badge on view attestation run details
+.eui-badge .eui-badge-color--primary {
+  background-color: $CCC_Color_Main !important;
+}
+//progress bar on attestation runs
+.mdc-linear-progress__bar-inner {
+  border-color: $CCC_Color_Main !important;
+}
+
+//blinking cursor color
+.mat-mdc-form-field:not(.mat-form-field-invalid) input {
+  caret-color: $CCC_Color_Main !important;
+}
+
+//slider
+.mdc-slider {
+  --mdc-slider-active-track-color: $CCC_Color_Light !important;
+  --mdc-slider-inactive-track-color: $CCC_Color_Light !important;
+}
+.mdc-slider__thumb-knob {
+  border-color: $CCC_Color_Main !important;
+}
+.mat-mdc-slider .mat-ripple .mat-mdc-slider-focus-ripple,
+.mat-mdc-slider .mat-ripple .mat-mdc-slider-active-ripple {
+  background-color: $CCC_Color_Light !important;
+}
+.mat-mdc-slider .mat-ripple .mat-mdc-slider-hover-ripple {
+  background-color: $CCC_Color_Light !important;
+}
+//underline on input field eg on loading page username
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
+  border-bottom-color: $CCC_Color_Main !important;
+}
+
+//my direct reports tile links for dark and highcontrast theme
+.eui-dark-theme ul.imx-valuelist li a,
+.eui-contrast-theme ul.imx-valuelist li a {
+  color: $CCC_Color_Main !important;
+}
+
+//selected date on datepicker of history tab timeline
+.cdk-program-focused
+  .mat-calendar-body-active
+  > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+  background-color: $CCC_Color_Light !important;
+}
+
+//selected item on view a report on report subscriptions of profile settings
+body .mat-mdc-list-base.mat-mdc-list-base .mdc-list-item--selected .mdc-list-item__primary-text {
+  color: $CCC_Color_Main !important;
+}
+
+//selected tab  background color (eg in profile settings etc)
+.mat-mdc-tab .mat-ripple-element,
+.mat-mdc-tab.mdc-tab--active .mat-ripple-element {
+  background-color: $CCC_Color_Main !important;
+}
+//tab  background color (eg in profile settings etc) on hover
+.mat-mdc-tab .mdc-tab__ripple::before,
+.mat-mdc-tab.mdc-tab--active .mdc-tab__ripple::before {
+  background-color: $CCC_Color_Main !important;
+}
+//tab  background color (eg in new request etc) on hover
+.mat-mdc-tab-link.mdc-tab--active .mdc-tab__ripple::before,
+.mat-mdc-tab-link .mdc-tab__ripple::before {
+  background-color: $CCC_Color_Main !important;
+}
+//selected tab  background color  eg on new request
+.mat-mdc-tab-link.mdc-tab--active .mat-ripple-element,
+.mat-mdc-tab-link .mat-ripple-element {
+  background-color: $CCC_Color_Main !important;
+}
+
+.mat-tree-node .mat-mdc-button.mat-primary {
+  color: $CCC_Color_Buttons !important;
+}
+
+//statistics right table background
+.mdc-card.area-card {
+  background-color: $CCC_Color_Main !important;
+  border: 1px solid $CCC_Color_Main !important;
 }

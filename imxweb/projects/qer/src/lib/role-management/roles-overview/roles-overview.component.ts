@@ -177,9 +177,9 @@ export class RolesOverviewComponent implements OnInit, OnDestroy, SideNavigation
       : {};
     this.entitySchema = this.roleService.getRoleEntitySchema(this.ownershipInfo.TableName);
     this.displayColumns = this.entitySchema == null ? [] : [this.entitySchema?.Columns[DisplayColumns.DISPLAY_PROPERTYNAME]];
-    if (this.hasHierarchy && this.canCreate) {
-      this.displayColumns.push({ ColumnName: 'actions', Type: ValType.String });
-    }
+    // if (this.hasHierarchy && this.canCreate) {
+    //   this.displayColumns.push({ ColumnName: 'actions', Type: ValType.String });
+    // }
 
     try {
       this.dataModel = await this.roleService.getDataModel(this.ownershipInfo.TableName, this.isAdmin);
@@ -309,10 +309,7 @@ export class RolesOverviewComponent implements OnInit, OnDestroy, SideNavigation
     }
     const result = await this.sidesheet
       .open(RoleDetailComponent, {
-        title: await this.translate
-          .get(this.roleService.getRoleTranslateKeys(this.ownershipInfo.TableName)?.editHeading ?? '#LDS#Heading Edit Object')
-          .toPromise(),
-
+        title: await this.translate.get('#LDS#Heading Details').toPromise(),
         subTitle: item.GetDisplay(),
         padding: '0px',
         width: calculateSidesheetWidth(1250, 0.7),

@@ -37,15 +37,11 @@ import { TilesModule } from 'qer';
 import { AttestationFeatureGuardService } from './attestation-feature-guard.service';
 import { AttestationHistoryWrapperComponent } from './attestation-history/attestation-history-wrapper.component';
 import { MyAttestationCasesComponent } from './attestation-history/my-attestation-cases/my-attestation-cases.component';
-import { ClaimDeviceComponent } from './claim-device/claim-device.component';
 import { DashboardPluginComponent } from './dashboard-plugin/dashboard-plugin.component';
 import { AttestationDecisionComponent } from './decision/attestation-decision.component';
 import { AttestationDecisionModule } from './decision/attestation-decision.module';
-import { AttestionAdminGuardService } from './guards/attestation-admin-guard.service';
 import { AttestationPoliciesGuardService } from './guards/attestation-policies-guard.service';
-import { HardwareGuardService } from './hardware-guard.service';
 import { InitService } from './init.service';
-import { PickCategoryComponent } from './pick-category/pick-category.component';
 import { PolicyListComponent } from './policies/policy-list/policy-list.component';
 import { PolicyGroupListComponent } from './policy-group/policy-group-list/policy-group-list.component';
 import { AttestationRunsModule } from './runs/attestation-runs.module';
@@ -87,24 +83,24 @@ const routes: Routes = [
       contextId: HELP_CONTEXTUAL.PendingAttestations,
     },
   },
-  {
-    path: 'attestation/preselection',
-    component: PickCategoryComponent,
-    canActivate: [AttestationFeatureGuardService, AttestionAdminGuardService],
-    resolve: [RouteGuardService],
-    data: {
-      contextId: HELP_CONTEXTUAL.AttestationPreselection,
-    },
-  },
-  {
-    path: 'claimdevice',
-    component: ClaimDeviceComponent,
-    canActivate: [HardwareGuardService],
-    resolve: [RouteGuardService],
-    data: {
-      contextId: HELP_CONTEXTUAL.ClaimDevice,
-    },
-  },
+  // {
+  //   path: 'attestation/preselection',
+  //   component: PickCategoryComponent,
+  //   canActivate: [AttestationFeatureGuardService, AttestionAdminGuardService],
+  //   resolve: [RouteGuardService],
+  //   data: {
+  //     contextId: HELP_CONTEXTUAL.AttestationPreselection,
+  //   },
+  // },
+  // {
+  //   path: 'claimdevice',
+  //   component: ClaimDeviceComponent,
+  //   canActivate: [HardwareGuardService],
+  //   resolve: [RouteGuardService],
+  //   data: {
+  //     contextId: HELP_CONTEXTUAL.ClaimDevice,
+  //   },
+  // },
   {
     path: 'attestation/policy-group',
     component: PolicyGroupListComponent,

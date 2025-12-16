@@ -346,7 +346,7 @@ export class DataExplorerGroupsComponent implements OnInit, OnDestroy, SideNavig
 
   private async viewGroup(data: GroupSidesheetData): Promise<void> {
     const sidesheetRef = this.sideSheet.open(GroupSidesheetComponent, {
-      title: await this.translate.get('#LDS#Heading Edit System Entitlement').toPromise(),
+      title: await this.translate.get('#LDS#Heading Details').toPromise(),
       subTitle: data.group.GetEntity().GetDisplay(),
       padding: '0px',
       width: calculateSidesheetWidth(1250, 0.7),

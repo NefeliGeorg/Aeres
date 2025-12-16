@@ -1,11 +1,10 @@
-<eui-masthead [ngClass]="{ 'no-logo': logoUrl }" data-imx-identifier="masthead" (logoClicked)="goHome()">
+<eui-masthead [ngClass]="'no-logo'" data-imx-identifier="masthead" (logoClicked)="goHome()">
   <mat-toolbar color="primary" data-imx-identifier="masthead-toolbar">
     <mat-toolbar-row>
       <!-- custom logo-->
       <img
         class="custom-logo"
-        *ngIf="logoUrl"
-        [src]="logoUrl"
+        [src]="'assets/CompanyLogo.png'"
         data-imx-identifier="masthead-custom-logo"
         tabindex="0"
         (keydown.enter)="goHome()"

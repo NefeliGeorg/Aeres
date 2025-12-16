@@ -37,8 +37,7 @@ import {
   RoleDetailComponent,
   RoleEntitlementActionService,
   RoleRecommendationResultItem,
-  RoleRecommendationsComponent,
-  RoleService,
+  RoleService
 } from 'qer';
 import { RmbApiService } from '../rmb-api-client.service';
 
@@ -109,38 +108,38 @@ export class TeamRoleComponent implements OnInit {
    * Load recomenndation options and open sidesheet where you can select the options.
    */
   public async onCreateTeamRole(): Promise<void> {
-    try {
-      this.loadingState = true;
-      const teamRoleRecommendOptions = await this.rmbApiService.client.portal_resp_team_teamrole_recommendations_get();
-      this.sidesheetService
-        .open(RoleRecommendationsComponent, {
-          title: this.translateService.instant('#LDS#Heading Create Team Role'),
-          padding: '0px',
-          width: calculateSidesheetWidth(1000),
-          testId: 'role-recommendation-sidesheet',
-          data: {
-            recommendation: teamRoleRecommendOptions.Items || [],
-            canEdit: true,
-            infoText:
-              '#LDS#Here you can create a team role. To do this, select the entitlements that are currently assigned individually to the members of your team. After you have created the team role, the entitlements are added to your shopping cart and you must submit the request. This team role will then be automatically assigned to all members of your team (along with the aforementioned entitlements).',
-            selectionTitle: '#LDS#Selected entitlements',
-            submitButtonTitle: '#LDS#Create team role',
-            actionColumnTitle: '#LDS#Distribution among the team',
-            hideActionConfirmation: true,
-            applyWithoutSelection: true,
-            noDataText:
-              '#LDS#Currently, no entitlements can be recommended. You can still create the team role and assign entitlements later.',
-          },
-        })
-        .afterClosed()
-        .subscribe((result: { items: RoleRecommendationResultItem[] }) => {
-          if (!!result) {
-            this.saveRecommendations(result.items);
-          }
-        });
-    } finally {
-      this.loadingState = false;
-    }
+  //   try {
+  //     this.loadingState = true;
+  //     const teamRoleRecommendOptions = await this.rmbApiService.client.portal_resp_team_teamrole_recommendations_get();
+  //     this.sidesheetService
+  //       .open(RoleRecommendationsComponent, {
+  //         title: this.translateService.instant('#LDS#Heading Create Team Role'),
+  //         padding: '0px',
+  //         width: calculateSidesheetWidth(1000),
+  //         testId: 'role-recommendation-sidesheet',
+  //         data: {
+  //           recommendation: teamRoleRecommendOptions.Items || [],
+  //           canEdit: true,
+  //           infoText:
+  //             '#LDS#Here you can create a team role. To do this, select the entitlements that are currently assigned individually to the members of your team. After you have created the team role, the entitlements are added to your shopping cart and you must submit the request. This team role will then be automatically assigned to all members of your team (along with the aforementioned entitlements).',
+  //           selectionTitle: '#LDS#Selected entitlements',
+  //           submitButtonTitle: '#LDS#Create team role',
+  //           actionColumnTitle: '#LDS#Distribution among the team',
+  //           hideActionConfirmation: true,
+  //           applyWithoutSelection: true,
+  //           noDataText:
+  //             '#LDS#Currently, no entitlements can be recommended. You can still create the team role and assign entitlements later.',
+  //         },
+  //       })
+  //       .afterClosed()
+  //       .subscribe((result: { items: RoleRecommendationResultItem[] }) => {
+  //         if (!!result) {
+  //           this.saveRecommendations(result.items);
+  //         }
+  //       });
+  //   } finally {
+  //     this.loadingState = false;
+  //   }
   }
   /**
    * Check loaded team role data existence.

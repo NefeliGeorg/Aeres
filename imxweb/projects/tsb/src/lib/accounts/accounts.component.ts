@@ -204,7 +204,7 @@ export class DataExplorerAccountsComponent implements OnInit, OnDestroy, SideNav
     this.logger.debug(this, `Viewing account`);
     this.logger.trace(this, `Account selected`, data.selectedAccount);
     const sidesheetRef = this.sideSheet.open(AccountSidesheetComponent, {
-      title: await this.translateProvider.get('#LDS#Heading Edit User Account').toPromise(),
+      title: await this.translateProvider.get('#LDS#Heading Details').toPromise(),
       subTitle: data.selectedAccount.GetEntity().GetDisplay(),
       padding: '0px',
       width: calculateSidesheetWidth(),

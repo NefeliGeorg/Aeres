@@ -36,17 +36,14 @@ import {
   ClassloggerService,
   DataSourceToolbarModule,
   DataTableModule,
-  HELP_CONTEXTUAL,
   HelpContextualModule,
   InfoModalDialogModule,
   LdsReplaceModule,
   MenuItem,
   MenuService,
-  SelectedElementsModule,
+  SelectedElementsModule
 } from 'qbm';
 import { hasFeatures, isShopAdmin } from '../admin/qer-permissions-helper';
-import { FeatureGuardService } from '../guards/feature-guard.service';
-import { ShopAdminGuardService } from '../guards/shop-admin-guard.service';
 import { ApprovalLevelFormComponent } from './approval-level-form/approval-level-form.component';
 import { ApprovalStepFormComponent } from './approval-step-form/approval-step-form.component';
 import { ApprovalWorkflowEditComponent } from './approval-workflow-edit/approval-workflow-edit.component';
@@ -58,15 +55,15 @@ import { ApprovalWorkflowHomeComponent } from './approval-workflow-home/approval
 
 const guardedFeatures = ['Portal_Preview_WorkflowEditor'];
 const routes: Routes = [
-  {
-    path: 'admin/approvalworkflowmanager',
-    component: ApprovalWorkflowHomeComponent,
-    canActivate: [ShopAdminGuardService, FeatureGuardService],
-    data: {
-      contextId: HELP_CONTEXTUAL.ApprovalWorkflowManager,
-      features: guardedFeatures,
-    },
-  },
+  // {
+  //   path: 'admin/approvalworkflowmanager',
+  //   component: ApprovalWorkflowHomeComponent,
+  //   canActivate: [ShopAdminGuardService, FeatureGuardService],
+  //   data: {
+  //     contextId: HELP_CONTEXTUAL.ApprovalWorkflowManager,
+  //     features: guardedFeatures,
+  //   },
+  // },
 ];
 
 @NgModule({
@@ -104,7 +101,7 @@ export class ApprovalWorkFlowModule {
     logger: ClassloggerService,
   ) {
     logger.info(this, '▶️ ApprovalWorkFlowModule loaded');
-    this.setupMenu();
+    // this.setupMenu();
   }
 
   private setupMenu(): void {

@@ -28,28 +28,27 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { CdrModule, HELP_CONTEXTUAL, RouteGuardService, TileModule } from 'qbm';
-import { BusinessownerOverviewTileModule, BusinessownerAddonTileModule } from 'qer';
-import { ClaimGroupComponent } from './claim-group/claim-group.component';
-import { InitService } from './init.service';
+import { CdrModule, RouteGuardService, TileModule } from 'qbm';
+import { BusinessownerAddonTileModule, BusinessownerOverviewTileModule } from 'qer';
 import { AccountsModule } from './accounts/accounts.module';
 import { DataExplorerGroupsComponent } from './groups/groups.component';
 import { GroupsModule } from './groups/groups.module';
 import { TsbNamespaceAdminGuardService } from './guards/tsb-namespace-admin-guard.service';
+import { InitService } from './init.service';
 import { ReportButtonExtModule } from './report-button-ext/report-button-ext.module';
 
 const routes: Routes = [
-  {
-    path: 'claimgroup',
-    component: ClaimGroupComponent,
-    canActivate: [RouteGuardService],
-    data: {
-      contextId: HELP_CONTEXTUAL.ClaimGroup,
-    },
-  },
+  // {
+  //   path: 'claimgroup',
+  //   component: ClaimGroupComponent,
+  //   canActivate: [RouteGuardService],
+  //   data: {
+  //     contextId: HELP_CONTEXTUAL.ClaimGroup,
+  //   },
+  // },
   {
     path: 'resp/UNSGroup',
     component: DataExplorerGroupsComponent,

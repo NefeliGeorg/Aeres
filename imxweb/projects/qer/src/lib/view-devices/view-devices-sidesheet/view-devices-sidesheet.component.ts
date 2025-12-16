@@ -73,6 +73,9 @@ export class ViewDevicesSidesheetComponent implements OnDestroy {
     columnNames?.forEach((name) => {
       try {
         cdrList.push(new BaseCdr(entity.GetColumn(name)));
+        cdrList.forEach(cdr => {
+          cdr.isReadOnly = () => true;
+        });
       } catch {}
     });
     return cdrList;

@@ -38,20 +38,17 @@ import {
   DataTableModule,
   DataViewModule,
   FkAdvancedPickerModule,
-  HELP_CONTEXTUAL,
   HelpContextualModule,
   InfoModalDialogModule,
   LdsReplaceModule,
   MenuItem,
   MenuService,
-  RouteGuardService,
-  SelectedElementsModule,
+  SelectedElementsModule
 } from 'qbm';
 
 import { MatTableModule } from '@angular/material/table';
 import { isShopAdmin, isShopStatistics } from '../admin/qer-permissions-helper';
 import { DynamicExclusionDialogModule } from '../dynamic-exclusion-dialog/dynamic-exclusion-dialog.module';
-import { ShopGuardService } from '../guards/shop-guard.service';
 import { JustificationModule } from '../justification/justification.module';
 import { ObjectHyperviewModule } from '../object-hyperview/object-hyperview.module';
 import { MemberSelectorComponent } from './request-config-members/member-selector/member-selector.component';
@@ -66,15 +63,15 @@ import { RequestsEntitySelectorComponent } from './requests-selector/requests-en
 import { RequestsComponent } from './requests/requests.component';
 
 const routes: Routes = [
-  {
-    path: 'configuration/requests',
-    component: RequestsComponent,
-    canActivate: [ShopGuardService],
-    resolve: [RouteGuardService],
-    data: {
-      contextId: HELP_CONTEXTUAL.ConfigurationRequests,
-    },
-  },
+  // {
+  //   path: 'configuration/requests',
+  //   component: RequestsComponent,
+  //   canActivate: [ShopGuardService],
+  //   resolve: [RouteGuardService],
+  //   data: {
+  //     contextId: HELP_CONTEXTUAL.ConfigurationRequests,
+  //   },
+  // },
 ];
 
 @NgModule({
@@ -120,7 +117,7 @@ export class RequestConfigModule {
     logger: ClassloggerService,
   ) {
     logger.info(this, '▶︝ RequestConfigModule loaded');
-    this.setupMenu();
+    // this.setupMenu();
   }
 
   private setupMenu(): void {

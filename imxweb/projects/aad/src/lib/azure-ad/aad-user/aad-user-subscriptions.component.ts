@@ -38,7 +38,6 @@ import {
   SettingsService,
 } from 'qbm';
 import { AzureAdService } from '../azure-ad.service';
-import { AadUserCreateDialogComponent } from './aad-user-create-dialog.component';
 
 @Component({
   selector: 'imx-aad-user-subscriptions',
@@ -111,28 +110,28 @@ export class AadUserSubscriptionsComponent implements OnInit {
     }
   }
 
-  public async showCreateModal(): Promise<void> {
-    const aadSub: PortalTargetsystemAaduserSubsku = this.aadService.generateAadUserSubscriptionEntity(this.getUserKey());
-    const dialogRef = this.dialog.open(AadUserCreateDialogComponent, {
-      width: '600px',
-      data: {
-        property: aadSub.ObjectKeyAADSubSku,
-        title: '#LDS#Heading Add Subscription',
-      },
-    });
+  // public async showCreateModal(): Promise<void> {
+  //   const aadSub: PortalTargetsystemAaduserSubsku = this.aadService.generateAadUserSubscriptionEntity(this.getUserKey());
+  //   const dialogRef = this.dialog.open(AadUserCreateDialogComponent, {
+  //     width: '600px',
+  //     data: {
+  //       property: aadSub.ObjectKeyAADSubSku,
+  //       title: '#LDS#Heading Add Subscription',
+  //     },
+  //   });
 
-    dialogRef.afterClosed().subscribe(async (result) => {
-      if (result) {
-        try {
-          this.aadService.handleOpenLoader();
-          await this.aadService.createAadUserSubscription(this.getUserKey(), aadSub);
-          await this.navigate();
-        } finally {
-          this.aadService.handleCloseLoader();
-        }
-      }
-    });
-  }
+  //   dialogRef.afterClosed().subscribe(async (result) => {
+  //     if (result) {
+  //       try {
+  //         this.aadService.handleOpenLoader();
+  //         await this.aadService.createAadUserSubscription(this.getUserKey(), aadSub);
+  //         await this.navigate();
+  //       } finally {
+  //         this.aadService.handleCloseLoader();
+  //       }
+  //     }
+  //   });
+  // }
 
   private async navigate(): Promise<void> {
     this.aadService.handleOpenLoader();

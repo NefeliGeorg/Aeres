@@ -30,7 +30,7 @@ import { Route, Router } from '@angular/router';
 import { ProjectConfig, QerProjectConfig } from '@imx-modules/imx-api-qer';
 import { ExtService, MenuItem, MenuService, TabItem } from 'qbm';
 import { NotificationRegistryService } from 'qer';
-import { canSeeAttestationPolicies, isAttestationAdmin } from './admin/permissions-helper';
+import { canSeeAttestationPolicies } from './admin/permissions-helper';
 import { PermissionsService } from './admin/permissions.service';
 import { AttestationHistoryFilterComponent } from './attestation-history/attestation-history-filter/attestation-history-filter.component';
 import { DashboardPluginComponent } from './dashboard-plugin/dashboard-plugin.component';
@@ -167,15 +167,15 @@ export class InitService {
           });
         }
 
-        if (isAttestationAdmin(features)) {
-          menu.items?.push({
-            id: 'ATT_Attestation_AttestationPreselection',
-            route: 'attestation/preselection',
-            title: '#LDS#Menu Entry Sampling data',
-            description: '#LDS#Shows an overview of samples.',
-            sorting: '20-50',
-          });
-        }
+        // if (isAttestationAdmin(features)) {
+        //   menu.items?.push({
+        //     id: 'ATT_Attestation_AttestationPreselection',
+        //     route: 'attestation/preselection',
+        //     title: '#LDS#Menu Entry Sampling data',
+        //     description: '#LDS#Shows an overview of samples.',
+        //     sorting: '20-50',
+        //   });
+        // }
 
         return menu;
       },
@@ -185,19 +185,19 @@ export class InitService {
           return undefined;
         }
 
-        return {
-          id: 'ROOT_Responsibilities',
-          title: '#LDS#Responsibilities',
-          sorting: '30',
-          items: [
-            {
-              id: 'QER_Responsibilities_AssignDevice',
-              route: 'claimdevice',
-              title: '#LDS#Menu Entry Device ownership',
-              sorting: '30-20',
-            },
-          ],
-        };
+        // return {
+        //   id: 'ROOT_Responsibilities',
+        //   title: '#LDS#Responsibilities',
+        //   sorting: '30',
+        //   items: [
+        //     {
+        //       id: 'QER_Responsibilities_AssignDevice',
+        //       route: 'claimdevice',
+        //       title: '#LDS#Menu Entry Device ownership',
+        //       sorting: '30-20',
+        //     },
+        //   ],
+        // };
       },
     );
   }

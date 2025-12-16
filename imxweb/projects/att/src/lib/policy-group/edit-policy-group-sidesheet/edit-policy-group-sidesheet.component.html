@@ -14,7 +14,7 @@
   </mat-card>
 </div>
 <div eui-sidesheet-actions>
-  <span class="justify-start" *ngIf="!policygroup.isNew">
+  <!-- <span class="justify-start" *ngIf="!policygroup.isNew">
     <button mat-stroked-button color="warn" (click)="delete()" data-imx-identifier="edit-policy-group-sidesheet-button-delete">
       <eui-icon icon="delete"></eui-icon>
       {{ '#LDS#Delete policy collection' | translate }}
@@ -28,5 +28,5 @@
     [disabled]="formGroup.invalid"
   >
     {{ (policygroup.isNew ? '#LDS#Create' : '#LDS#Save') | translate }}
-  </button>
+  </button> -->
 </div>

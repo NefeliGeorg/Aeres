@@ -58,7 +58,7 @@
 
   <div eui-sidesheet-actions *ngIf="canEdit || hasRecommendations">
     <imx-selected-elements class="justify-start" *ngIf="canEdit" [selectedElements]="selectedEntities"></imx-selected-elements>
-    <button
+    <!-- <button
       *ngIf="hasRecommendations"
       data-imx-identifier="roles-entitlements-recommendation-button"
       mat-stroked-button
@@ -79,6 +79,6 @@
     >
       <eui-icon icon="delete"></eui-icon>
       {{ '#LDS#Remove' | translate }}
-    </button>
+    </button> -->
   </div>
 </div>

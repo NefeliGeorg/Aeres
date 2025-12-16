@@ -107,8 +107,15 @@ export class EditPolicyGroupSidesheetComponent implements OnInit {
       }
       if (refresh) {
         this.objectProperties.push(new BaseCdr(column));
+        this.objectProperties.forEach(cdr => {
+          cdr.isReadOnly = () => true;
+        })
+
       } else {
         this.objectProperties.push(new BaseCdr(column));
+        this.objectProperties.forEach(cdr => {
+          cdr.isReadOnly = () => true;
+        })
       }
     }
   }

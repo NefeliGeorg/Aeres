@@ -181,7 +181,7 @@ export class ViewDevicesComponent implements OnInit, OnDestroy, SideNavigationCo
       this.helpContextualService.setHelpContextId(HELP_CONTEXTUAL.PortalDevicesEdit);
       const result = await this.sideSheet
         .open(ViewDevicesSidesheetComponent, {
-          title: await this.translate.get('#LDS#Heading Edit Device').toPromise(),
+          title: await this.translate.get('#LDS#Heading Details').toPromise(),
           subTitle: portalDevices.GetEntity().GetDisplay(),
           padding: '0',
           width: calculateSidesheetWidth(),

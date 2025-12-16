@@ -150,7 +150,7 @@ export class AccountSidesheetComponent implements OnInit {
   private async setup(): Promise<void> {
     const cols = (await this.configService.getConfig())?.OwnershipConfig?.EditableFields?.[this.parameters.objecttable] ?? [];
 
-    this.cdrList = this.cdrFactory.buildCdrFromColumnList(this.selectedAccount.GetEntity(), cols);
+    this.cdrList = this.cdrFactory.buildCdrFromColumnList(this.selectedAccount.GetEntity(), cols, true);
 
     this.dynamicTabs = (
       await this.tabService.getFittingComponents<TabItem>('accountSidesheet', (ext) => ext.inputData.checkVisibility(this.parameters))

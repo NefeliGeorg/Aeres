@@ -35,29 +35,26 @@ import {
   CdrModule,
   ClassloggerService,
   DataTreeWrapperModule,
-  HELP_CONTEXTUAL,
   HelpContextualModule,
   MenuItem,
-  MenuService,
-  RouteGuardService,
+  MenuService
 } from 'qbm';
 
 import { isShopAdmin, isShopStatistics } from '../admin/qer-permissions-helper';
-import { ShopGuardService } from '../guards/shop-guard.service';
 import { ServiceItemsModule } from '../service-items/service-items.module';
 import { ServiceCategoriesComponent } from './service-categories.component';
 import { ServiceCategoryComponent } from './service-category.component';
 
 const routes: Routes = [
-  {
-    path: 'configuration/servicecategories',
-    component: ServiceCategoriesComponent,
-    canActivate: [ShopGuardService],
-    resolve: [RouteGuardService],
-    data: {
-      contextId: HELP_CONTEXTUAL.ServiceCategories,
-    },
-  },
+  // {
+  //   path: 'configuration/servicecategories',
+  //   component: ServiceCategoriesComponent,
+  //   canActivate: [ShopGuardService],
+  //   resolve: [RouteGuardService],
+  //   data: {
+  //     contextId: HELP_CONTEXTUAL.ServiceCategories,
+  //   },
+  // },
 ];
 
 @NgModule({
@@ -81,7 +78,7 @@ export class ServiceCategoriesModule {
     logger: ClassloggerService,
   ) {
     logger.info(this, '▶︝ ServiceCategoriesModule loaded');
-    this.setupMenu();
+    // this.setupMenu();
   }
 
   private setupMenu(): void {

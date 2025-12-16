@@ -68,7 +68,14 @@ export class ResourceSidesheetComponent implements OnDestroy {
       }),
     );
     this.cdrList = this.data.editableFields.map((elem) => new BaseCdr(this.data.entity.GetColumn(elem)));
+    this.cdrList.forEach(cdr => {
+      cdr.isReadOnly = () => true;
+    });
+    console.log(this.cdrList);
     this.ownerCdr = this.data.accProduct == null ? undefined : new BaseCdr(this.data.accProduct.GetColumn('UID_OrgRuler'));
+    if (this.ownerCdr) {
+      this.ownerCdr.isReadOnly = () => true;
+    }
   }
 
   public ngOnDestroy(): void {

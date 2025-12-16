@@ -1,7 +1,7 @@
 <ng-container *ngIf="selectedIdentity">
   <h2 class="mat-headline-5">
     <span translate>#LDS#Heading Profile Settings</span>
-    <imx-help-contextual [contextId]="selectedContextId"></imx-help-contextual>
+    <!-- <imx-help-contextual [contextId]="selectedContextId"></imx-help-contextual> -->
   </h2>
 
   <imx-identity-select
@@ -52,7 +52,7 @@
           </mat-card-content>
         </mat-card>
         <div class="imx-button-bar-transparent">
-          <button
+          <!-- <button
             mat-flat-button
             [disabled]="!form.dirty || form.invalid"
             type="submit"
@@ -62,11 +62,11 @@
             data-imx-identifier="edit-profile-button-save"
           >
             {{ '#LDS#Save' | translate }}
-          </button>
+          </button> -->
         </div>
       </ng-template>
     </mat-tab>
-    <mat-tab label="{{ '#LDS#Heading Email Notifications' | translate }}" data-imx-identifier="profile-email" *ngIf="hasMailSubscriptions">
+    <!-- <mat-tab label="{{ '#LDS#Heading Email Notifications' | translate }}" data-imx-identifier="profile-email" *ngIf="hasMailSubscriptions">
       <ng-template matTabContent>
         <imx-mail-subscriptions [uidPerson]="userUid" [mailInfo]="mailInfo"></imx-mail-subscriptions>
       </ng-template>
@@ -80,7 +80,7 @@
       <ng-template matTabContent>
         <imx-password-questions [passwordQuestionType]="'portal'"></imx-password-questions>
       </ng-template>
-    </mat-tab>
+    </mat-tab> -->
     <mat-tab
       label="{{ '#LDS#Heading Security Keys' | translate }}"
       data-imx-identifier="profile-security-keys"

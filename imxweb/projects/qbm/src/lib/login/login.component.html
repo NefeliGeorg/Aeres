@@ -1,10 +1,10 @@
 <div class="imx-loginPage">
   <div class="imx-loginFormcontainer">
     <div *ngIf="!logoUrl">
-      <eui-logo [size]="72"></eui-logo>
+      <!-- <eui-logo [size]="72"></eui-logo> -->
     </div>
-    <div *ngIf="logoUrl">
-      <img class="custom-logo" [src]="logoUrl" [alt]="" />
+    <div>
+      <img class="custom-logo" [src]="'assets/CompanyLogo.png'" [alt]="" />
     </div>
     <h1 data-imx-identifier="product-name-title">
       {{ product.name }}

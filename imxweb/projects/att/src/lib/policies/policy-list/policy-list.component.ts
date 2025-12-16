@@ -39,8 +39,7 @@ import {
   EntitySchema,
   ExtendedTypedEntityCollection,
   FilterType,
-  TypedEntityCollectionData,
-  ValType,
+  TypedEntityCollectionData
 } from '@imx-modules/imx-qbm-dbts';
 import {
   BusyService,
@@ -106,13 +105,13 @@ export class PolicyListComponent implements OnInit {
     this.entitySchemaPolicy = policyService.AttestationPolicySchema;
     this.displayedColumns = [
       this.entitySchemaPolicy.Columns[DisplayColumns.DISPLAY_PROPERTYNAME],
-      this.entitySchemaPolicy.Columns.NextRun,
-      {
-        ColumnName: 'actions',
-        Type: ValType.String,
-        afterAdditionals: true,
-        untranslatedDisplay: '#LDS#Actions',
-      },
+      // this.entitySchemaPolicy.Columns.NextRun,
+      // {
+      //   ColumnName: 'actions',
+      //   Type: ValType.String,
+      //   afterAdditionals: true,
+      //   untranslatedDisplay: '#LDS#Actions',
+      // },
     ];
   }
 
@@ -168,7 +167,7 @@ export class PolicyListComponent implements OnInit {
       await this.showPolicy(
         data.Data[0],
         data.extendedData?.[0],
-        await this.translator.get('#LDS#Heading Edit Attestation Policy').toPromise(),
+        await this.translator.get('#LDS#Heading Details').toPromise(),
         false,
       );
     }

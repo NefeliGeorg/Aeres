@@ -7,7 +7,7 @@
             <mat-card class="imx-master-data-cdrs">
               <h3>
                 <span>{{ '#LDS#Heading Attestation Policy Settings' | translate }}</span>
-                <imx-help-contextual [contextId]="contextId"></imx-help-contextual>
+                <!-- <imx-help-contextual [contextId]="contextId"></imx-help-contextual> -->
               </h3>
               <eui-alert *ngIf="policy.showSampleDataWarning" type="warning" [colored]="true" [dismissable]="true">
                 <eui-alert-content>
@@ -128,7 +128,7 @@
         </form>
       </div>
       <div eui-sidesheet-actions>
-        <button
+        <!-- <button
           class="justify-start"
           *ngIf="!policy.isNew"
           mat-stroked-button
@@ -148,7 +148,7 @@
           (click)="submit()"
         >
           {{ (policy.isNew ? '#LDS#Create' : '#LDS#Save') | translate }}
-        </button>
+        </button> -->
       </div>
     </mat-tab>
 

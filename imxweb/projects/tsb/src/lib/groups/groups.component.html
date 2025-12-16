@@ -2,7 +2,7 @@
   <div class="imx-card-data-explorer-header">
     <div class="imx-card-data-explorer-header-bg">
       <h3 translate>#LDS#Heading System Entitlements</h3>
-      <imx-help-contextual [contextId]="contextId"></imx-help-contextual>
+      <!-- <imx-help-contextual [contextId]="contextId"></imx-help-contextual> -->
     </div>
   </div>
   <ng-container *ngTemplateOutlet="table"> </ng-container>
@@ -85,7 +85,7 @@
 
 <ng-template #actions>
   <imx-data-view-selection [dataSource]="dataSource"></imx-data-view-selection>
-  <button
+  <!-- <button
     mat-stroked-button
     data-imx-identifier="groups-button-actions"
     title="{{ '#LDS#Actions' | translate }}"
@@ -110,5 +110,5 @@
     >
       <span translate>#LDS#Assign product owner</span>
     </button>
-  </mat-menu>
+  </mat-menu> -->
 </ng-template>

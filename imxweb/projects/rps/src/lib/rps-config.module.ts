@@ -25,26 +25,24 @@
  */
 
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HELP_CONTEXTUAL, RouteGuardService } from 'qbm';
+import { RouterModule, Routes } from '@angular/router';
 
 import { InitService } from './init.service';
-import { SubscriptionsModule } from './subscriptions/subscriptions.module';
-import { EditReportComponent } from './reports/edit-report.component';
-import { EditReportModule } from './reports/edit-report.module';
 import { ReportButtonModule } from './report-button/report-button.module';
+import { EditReportModule } from './reports/edit-report.module';
 import { StatisticReportButtonModule } from './statistic-report-button/statistic-report-button.module';
+import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 
 const routes: Routes = [
-  {
-    path: 'reports',
-    component: EditReportComponent,
-    canActivate: [RouteGuardService],
-    resolve: [RouteGuardService],
-    data: {
-      contextId: HELP_CONTEXTUAL.Reports,
-    },
-  },
+  // {
+  //   path: 'reports',
+  //   component: EditReportComponent,
+  //   canActivate: [RouteGuardService],
+  //   resolve: [RouteGuardService],
+  //   data: {
+  //     contextId: HELP_CONTEXTUAL.Reports,
+  //   },
+  // },
 ];
 
 @NgModule({

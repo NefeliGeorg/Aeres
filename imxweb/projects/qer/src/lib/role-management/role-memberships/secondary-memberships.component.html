@@ -1,8 +1,8 @@
 <div class="imx-tab-content-sidesheet-with-table imx-sidesheet-content__overflow">
   <div eui-sidesheet-content class="imx-card-fill">
-    <eui-alert [condensed]="true" [colored]="true" type="info" [dismissable]="true" (dismissed)="showHelperAlert = false">
+    <!-- <eui-alert [condensed]="true" [colored]="true" type="info" [dismissable]="true" (dismissed)="showHelperAlert = false">
       {{ secondaryAlert | translate }}
-    </eui-alert>
+    </eui-alert> -->
     <mat-card class="imx-sidesheet-content__overflow">
       <imx-data-source-toolbar
         #dst
@@ -52,7 +52,7 @@
   </div>
   <div eui-sidesheet-actions *ngIf="canEdit">
     <imx-selected-elements class="justify-start" [selectedElements]="selectedEntities"></imx-selected-elements>
-    <button
+    <!-- <button
       data-imx-identifier="roles-secondary-memberships-remove-button"
       mat-stroked-button
       color="warn"
@@ -64,6 +64,6 @@
     </button>
     <button data-imx-identifier="roles-secondary-memberships-request-button" mat-stroked-button (click)="onSelectIdentities()">
       {{ '#LDS#Request memberships' | translate }}
-    </button>
+    </button> -->
   </div>
 </div>

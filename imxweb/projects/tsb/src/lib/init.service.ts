@@ -174,19 +174,19 @@ export class InitService {
           return undefined;
         }
 
-        return {
-          id: 'ROOT_Responsibilities',
-          title: '#LDS#Responsibilities',
-          sorting: '30',
-          items: [
-            {
-              id: 'QER_Responsibilities_AssignOwnership',
-              route: 'claimgroup',
-              title: '#LDS#Menu Entry System entitlement ownership',
-              sorting: '30-20',
-            },
-          ],
-        };
+        // return {
+        //   id: 'ROOT_Responsibilities',
+        //   title: '#LDS#Responsibilities',
+        //   sorting: '30',
+        //   items: [
+        //     {
+        //       id: 'QER_Responsibilities_AssignOwnership',
+        //       route: 'claimgroup',
+        //       title: '#LDS#Menu Entry System entitlement ownership',
+        //       sorting: '30-20',
+        //     },
+        //   ],
+        // };
       },
       (preProps: string[], features: string[], projectConfig: ProjectConfig, groups: string[]) => {
         if (!preProps.includes('ITSHOP') || !isTsbNameSpaceAdminBase(groups)) {

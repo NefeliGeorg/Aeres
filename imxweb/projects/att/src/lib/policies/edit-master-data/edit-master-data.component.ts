@@ -170,6 +170,7 @@ export class EditMasterDataComponent implements OnInit, OnDestroy {
 
   public updateMethodAndFilter(): void {
     this.objectProperties.UID_PWODecisionMethod.cdr = new BaseCdr(this.policy.policy.UID_PWODecisionMethod.Column);
+    this.objectProperties.UID_PWODecisionMethod.cdr.isReadOnly = () => true;
     this.filterModel.attestationObjectSubject.next(this.policy.policy.UID_AttestationObject.value);
     this.policy.filterData = {
       IsReadOnly: this.policy?.filterData == null || this.policy?.filterData.IsReadOnly,
@@ -181,11 +182,13 @@ export class EditMasterDataComponent implements OnInit, OnDestroy {
 
   public async updateAttestation(): Promise<void> {
     this.objectProperties.Attestators.cdr = new BaseCdr(this.policy.policy.Attestators.Column);
+    this.objectProperties.Attestators.cdr.isReadOnly = () => true;
     this.logger.debug(this, 'Attestator cdr updated');
   }
 
   public async updateReadOnlySchedule() {
     this.objectProperties.UID_DialogSchedule.cdr = new BaseCdr(this.policy.policy.UID_DialogSchedule.Column);
+    this.objectProperties.UID_DialogSchedule.cdr.isReadOnly = () => true;
     this.logger.debug(this, 'UID_DialogSchedule cdr updated');
   }
 
@@ -279,6 +282,7 @@ export class EditMasterDataComponent implements OnInit, OnDestroy {
     if (result) {
       this.policy.policy.IsInActive.value = false;
       this.objectProperties.IsInActive.cdr = new BaseCdr(this.policy.policy.IsInActive.Column);
+      this.objectProperties.IsInActive.cdr.isReadOnly = () => true;
       this.logger.debug(this, 'column IsInActive was reseted');
     }
   }
@@ -315,8 +319,10 @@ export class EditMasterDataComponent implements OnInit, OnDestroy {
       }
       if (refresh) {
         this.objectProperties[column.ColumnName].cdr = new BaseCdr(column);
+        this.objectProperties[column.ColumnName].cdr.isReadOnly = () => true;
       } else {
         this.objectProperties[column.ColumnName] = { cdr: new BaseCdr(column) };
+        this.objectProperties[column.ColumnName].cdr.isReadOnly = () => true;
       }
     }
   }

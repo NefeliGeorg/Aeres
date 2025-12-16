@@ -112,7 +112,7 @@ export class BusinessOwnerChartSummaryComponent implements OnInit {
 
     await this.sideSheet
       .open(IdentitySidesheetComponent, {
-        title: await this.translate.get('#LDS#Heading Edit Identity').toPromise(),
+        title: await this.translate.get('#LDS#Heading Details').toPromise(),
         subTitle: selectedIdentity.GetEntity().GetDisplay(),
         padding: '0px',
         disableClose: true,

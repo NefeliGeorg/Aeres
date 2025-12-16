@@ -177,7 +177,7 @@
   </ng-container>
 </mat-tab-group>
 <div eui-sidesheet-actions>
-  <button
+  <!-- <button
     class="justify-start"
     mat-stroked-button
     color="warn"
@@ -187,7 +187,7 @@
   >
     <eui-icon icon="userremove"></eui-icon>
     <span translate>#LDS#Delete</span>
-  </button>
+  </button> -->
   <button
     mat-stroked-button
     data-imx-identifier="identity-sidesheet-actions"
@@ -214,7 +214,7 @@
     >
       <span translate>#LDS#View identities this identity is directly responsible for</span>
     </button>
-    <button mat-menu-item *ngIf="canAnalyzeRisk" (click)="analyzeRisk()" data-imx-identifier="identity-sidesheet-button-analyze-risk">
+    <!-- <button mat-menu-item *ngIf="canAnalyzeRisk" (click)="analyzeRisk()" data-imx-identifier="identity-sidesheet-button-analyze-risk">
       <span translate>#LDS#Analyze risk</span>
     </button>
     <button
@@ -232,9 +232,9 @@
       data-imx-identifier="identity-sidesheet-assign-manager"
     >
       <span translate>#LDS#Assign to new manager</span>
-    </button>
+    </button> -->
   </mat-menu>
-  <button
+  <!-- <button
     *ngIf="data.canEdit"
     mat-flat-button
     color="primary"
@@ -243,5 +243,5 @@
     [disabled]="detailsFormGroup?.pristine || detailsFormGroup?.invalid"
   >
     <span translate>#LDS#Save</span>
-  </button>
+  </button> -->
 </div>

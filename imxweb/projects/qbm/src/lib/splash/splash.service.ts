@@ -33,6 +33,7 @@ import { EuiSplashScreenConfig, EuiSplashScreenOptions, EuiSplashScreenService }
 export class SplashService {
   private defaultOptions: EuiSplashScreenConfig = {
     applicationName: 'One Identity Manager',
+    customLogo: {url: 'assets/CompanyLogo.png', height: '60px', altText: 'Aeres'},
     icon: 'oi-horizontal',
     showSpinner: true,
     message: 'Loading...',

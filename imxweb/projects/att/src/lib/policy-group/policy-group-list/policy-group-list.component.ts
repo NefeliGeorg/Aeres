@@ -32,8 +32,7 @@ import {
   DisplayColumns,
   EntitySchema,
   ExtendedTypedEntityCollection,
-  TypedEntityCollectionData,
-  ValType,
+  TypedEntityCollectionData
 } from '@imx-modules/imx-qbm-dbts';
 import { TranslateService } from '@ngx-translate/core';
 import {
@@ -83,13 +82,13 @@ export class PolicyGroupListComponent {
     this.displayedColumns = [
       this.entitySchemaPolicy.Columns['Ident_AttestationPolicyGroup'],
       this.entitySchemaPolicy.Columns['UID_PersonOwner'],
-      this.entitySchemaPolicy.Columns['UID_QERPickCategory'],
-      {
-        ColumnName: 'actions',
-        Type: ValType.String,
-        afterAdditionals: true,
-        untranslatedDisplay: '#LDS#Actions',
-      },
+      // this.entitySchemaPolicy.Columns['UID_QERPickCategory'],
+      // {
+      //   ColumnName: 'actions',
+      //   Type: ValType.String,
+      //   afterAdditionals: true,
+      //   untranslatedDisplay: '#LDS#Actions',
+      // },
     ];
   }
 
@@ -143,7 +142,7 @@ export class PolicyGroupListComponent {
         await this.showPolicy(
           data.Data[0],
           data.extendedData ? data.extendedData[0] : undefined,
-          await this.translator.get('#LDS#Heading Edit Policy Collection').toPromise(),
+          await this.translator.get('#LDS#Heading Details').toPromise(),
           false,
           policyGroup.GetEntity().GetDisplay(),
         );

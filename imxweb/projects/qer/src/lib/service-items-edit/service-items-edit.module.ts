@@ -38,27 +38,25 @@ import {
   DataSourceToolbarModule,
   DataTableModule,
   DataViewModule,
-  HELP_CONTEXTUAL,
   HelpContextualModule,
   MenuItem,
-  MenuService,
+  MenuService
 } from 'qbm';
 import { isShopAdmin } from '../admin/qer-permissions-helper';
-import { ShopAdminGuardService } from '../guards/shop-admin-guard.service';
 import { ObjectHyperviewModule } from '../object-hyperview/object-hyperview.module';
 import { ServiceItemsEditFormModule } from './service-items-edit-form/service-items-edit-form.module';
 import { ServiceItemsEditSidesheetComponent } from './service-items-edit-sidesheet/service-items-edit-sidesheet.component';
 import { ServiceItemsEditComponent } from './service-items-edit.component';
 
 const routes: Routes = [
-  {
-    path: 'admin/serviceitems',
-    component: ServiceItemsEditComponent,
-    canActivate: [ShopAdminGuardService],
-    data: {
-      contextId: HELP_CONTEXTUAL.ServiceItems,
-    },
-  },
+  // {
+  //   path: 'admin/serviceitems',
+  //   component: ServiceItemsEditComponent,
+  //   canActivate: [ShopAdminGuardService],
+  //   data: {
+  //     contextId: HELP_CONTEXTUAL.ServiceItems,
+  //   },
+  // },
 ];
 
 @NgModule({
@@ -86,7 +84,7 @@ export class ServiceItemsEditModule {
     logger: ClassloggerService,
   ) {
     logger.info(this, '▶️ ServiceItemsEditModule loaded');
-    this.setupMenu();
+    // this.setupMenu();
   }
 
   private setupMenu(): void {

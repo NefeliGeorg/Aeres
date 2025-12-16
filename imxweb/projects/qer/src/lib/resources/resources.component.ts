@@ -145,7 +145,7 @@ export class ResourcesComponent implements OnInit, SideNavigationComponent {
     }
 
     const sidesheetRef = this.sidesheet.open(ResourceSidesheetComponent, {
-      title,
+      title: await this.translate.get('#LDS#Heading Details').toPromise(),
       subTitle: item.GetEntity().GetDisplay(),
       padding: '0px',
       width: calculateSidesheetWidth(1000),
