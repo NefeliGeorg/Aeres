@@ -105,7 +105,8 @@ export class AppService {
   private async setTitle(): Promise<void> {
     const name = this.imxConfig.ProductName || Globals.QIM_ProductNameFull;
     this.config.Config.Title = await this.translateService.get('#LDS#Heading Web Portal').toPromise();
-    const title = `${name} ${this.config.Config.Title}`;
+    //const title = `${name} ${this.config.Config.Title}`;
+    const title = `IT-shop Aeres`;
     this.title.setTitle(title);
 
     await this.updateSplash(title);
